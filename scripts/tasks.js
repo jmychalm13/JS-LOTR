@@ -45,9 +45,13 @@ testKeepSecret();
 var partySize = 4;
 
 // WRITE YOUR CODE HERE
+function doubleParty() {
+  partySize += 4;
+  return partySize;
+}
 
 // TESTING TASK 4
-// testDoubleParty();
+testDoubleParty();
 
 // click on Strider to see a transformation!
 
@@ -57,11 +61,14 @@ var partySize = 4;
 function travelAbroad() {
   var shire = ["Frodo Baggins", "Samwise Gamgee", "Merry Brandybuck", "Pippin Took"];
   var rivendell = [];
-  // WRITE YOUR CODE HERE
+  shire.forEach((hobbit) => {
+    rivendell.unshift(hobbit);
+  });
+  return rivendell;
 }
 
 // TESTING TASK 5
-// testTravelAbroad();
+testTravelAbroad();
 
 // Task 6: Forge the fellowship
 // To forge the fellowship, write a function called declareAllegiance that takes in a member (a string, such as 'Sam') and concatenates it into a string to return "I, Sam, am part of the fellowship!"
