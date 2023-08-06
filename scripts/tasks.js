@@ -74,9 +74,12 @@ testTravelAbroad();
 // To forge the fellowship, write a function called declareAllegiance that takes in a member (a string, such as 'Sam') and concatenates it into a string to return "I, Sam, am part of the fellowship!"
 
 // WRITE YOUR CODE HERE
+function declareAllegiance(member) {
+  return "I, " + member + ", am part of the fellowship!";
+}
 
 // TESTING TASK 6
-// testDeclareAllegiance();
+testDeclareAllegiance();
 
 // click on Rivendell to hear a tune!
 
@@ -87,10 +90,12 @@ testTravelAbroad();
 
 function slayTheBalrog() {
   // WRITE YOUR CODE HERE
+  var gandalf = "Gandalf";
+  return `${gandalf} the Grey says: You shall not pass! ${gandalf} the Grey is now ${gandalf} the white.`;
 }
 
 // TESTING TASK 7
-// testSlayTheBalrog();
+testSlayTheBalrog();
 
 // Task 8: Blow the Horn of Gondor
 // Observe the function with the Boromir object below. Have the function return the value of calling the blowHorn function on boromir. Docs: https://www.w3schools.com/js/js_object_methods.asp
@@ -104,11 +109,11 @@ function blowTheHornOfGondor() {
       return `${this.name} has blown the Horn of ${this.realm}!`;
     },
   };
-  // WRITE YOUR CODE HERE
+  return boromir.blownHorn();
 }
 
 // TESTING TASK 8
-// testBlowTheHornOfGondor();
+testBlowTheHornOfGondor();
 
 // Task 9: Send Frodo and Sam to Mount Doom
 // To send Frodo and Sam to Mount Doom, find Frodo's place in the fellowshipMembers array in the function below using the indexOf method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf. Save that value to a variable called frodosPlace. Then, use the .splice method to remove and return 2 elements from the fellowshipMembers array (Frodo and Sam) starting at frodosPlace: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice. The splice method has a return value, you can use that as your function return!
@@ -125,10 +130,14 @@ function itsDangerousToGoAlone() {
     "Pippin Took",
   ];
   // WRITE YOUR CODE HERE
+  var frodosPlace = fellowshipMembers.indexOf("Frodo Baggins");
+  return fellowshipMembers.splice(frodosPlace, 2);
 }
 
+// itsDangerousToGoAlone();
+
 // TESTING TASK 9
-// testItsDangerousToGoAlone();
+testItsDangerousToGoAlone();
 
 // Task 10: Gollum takes the ring
 // To have Gollum take the ring, take a look at the code below and uncomment the noted lines to look at the console output. Then, read up on function scope and global scope here (you just need those 2): https://www.w3schools.com/js/js_scope.asp. Finally, fix the weWantsIt function to use the correct variable scope for the gollumHasRing variable so the global value changes to true.
@@ -137,15 +146,15 @@ var gollumHasRing = false;
 
 function weWantsIt() {
   console.log("Gollum has attempted to take the Ring from Frodo!");
-  var gollumHasRing = true;
+  gollumHasRing = true;
 }
 
 // UNCOMMENT THE FOLLOWING LINES
-// weWantsIt();
-// console.log(`gollumHasRing: ${gollumHasRing}`);
+weWantsIt();
+console.log(`gollumHasRing: ${gollumHasRing}`);
 
 // TESTING TASK 10
-// testWeWantsIt();
+testWeWantsIt();
 
 // Task 11: Vanquish Gollum and destroy the Ring
 // To send Gollum and the Ring into the lava of Mount Doom, write a function called wrestleGollum. The function should use a for loop (docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) to loop 5 times and increase a variable
