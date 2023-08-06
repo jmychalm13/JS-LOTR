@@ -160,9 +160,16 @@ testWeWantsIt();
 // To send Gollum and the Ring into the lava of Mount Doom, write a function called wrestleGollum. The function should use a for loop (docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration) to loop 5 times and increase a variable
 
 // WRITE YOUR CODE HERE
+function wrestleGollum() {
+  var num = 0;
+  for (let i = 0; i < 5; i++) {
+    num++;
+  }
+  return num;
+}
 
 // TESTING TASK 11
-// testWrestleGollum();
+testWrestleGollum();
 
 // Task 12: Send the hobbits back to the Shire
 // To send the hobbits all back to the shire, complete the thereAndBackAgain function below. Use the .filter array method to get a filtered array of only hobbits using the hobbit key (note the array is now filled with objects!). Array filter documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter. Then, loop through your filtered array of hobbits and change each one's location to 'The Shire'. Finally, return the array of filtered hobbits in their updated location.
@@ -179,7 +186,14 @@ function thereAndBackAgain() {
     { name: "Pippin Took", hobbit: true, location: "Rivendell" },
   ];
   // WRITE YOUR CODE HERE
+  var hobbits = fellowshipMembers.filter((member) => member.hobbit);
+  console.log(hobbits);
+  hobbits.forEach((hobbit) => {
+    hobbit.location = "The Shire";
+  });
+  return hobbits;
 }
 
+// thereAndBackAgain();
 // TESTING TASK 12
-// testThereAndBackAgain();
+testThereAndBackAgain();
